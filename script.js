@@ -1,7 +1,26 @@
 const legalStyles=document.createElement('link');
 legalStyles.rel='stylesheet';
-legalStyles.href='legal.css?v=20260828-5';
+legalStyles.href='legal.css?v=20260828-6';
 document.head.appendChild(legalStyles);
+
+// Restore the public navigation names selected before the legal-cleanup pass.
+const publicNavLabels={
+  home:'Home',
+  about:'About',
+  guardian:'Guardian Angel',
+  detection:'Safe Entry Detection',
+  water:'Water From Air',
+  vanguard:'K.I.S. Vanguard',
+  contact:'Contact'
+};
+document.querySelectorAll('.nav .nav-link').forEach(link=>{
+  const label=publicNavLabels[link.dataset.page];
+  if(label) link.textContent=label;
+});
+
+// Use the corrected founder portrait file instead of the damaged legacy asset.
+const founderImage=document.querySelector('.founder-photo img');
+if(founderImage) founderImage.src='assets/founder-web.jpg?v=20260828-6';
 
 const pages=[...document.querySelectorAll('.page')];
 const links=[...document.querySelectorAll('.nav-link')];
