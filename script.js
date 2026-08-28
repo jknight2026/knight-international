@@ -1,3 +1,8 @@
+const legalStyles=document.createElement('link');
+legalStyles.rel='stylesheet';
+legalStyles.href='legal.css?v=20260828-5';
+document.head.appendChild(legalStyles);
+
 const pages=[...document.querySelectorAll('.page')];
 const links=[...document.querySelectorAll('.nav-link')];
 const menu=document.querySelector('.nav');
