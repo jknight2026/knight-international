@@ -22,6 +22,26 @@ document.querySelectorAll('.nav .nav-link').forEach(link=>{
 const founderImage=document.querySelector('.founder-photo img');
 if(founderImage) founderImage.src='assets/Image%2015.jpeg?v=20260829-1';
 
+// Add the public-facing Guardian Angel Campus concept artwork to the Guardian tab.
+const guardianPage=document.getElementById('guardian');
+if(guardianPage && !guardianPage.querySelector('.guardian-marketing-art')){
+  const artWrap=document.createElement('figure');
+  artWrap.className='guardian-marketing-art';
+  artWrap.innerHTML=`<img src="assets/Image%2017.jpeg?v=20260829-1" alt="Guardian Angel Campus concept visualization showing a school safety platform" loading="eager" />
+  <figcaption>Concept visualization — product currently in development.</figcaption>`;
+  const projectLayout=guardianPage.querySelector('.project-layout');
+  guardianPage.insertBefore(artWrap,projectLayout);
+
+  const artStyles=document.createElement('style');
+  artStyles.textContent=`
+    .guardian-marketing-art{margin:0 0 2rem;padding:0;border:1px solid rgba(212,165,82,.28);border-radius:22px;overflow:hidden;background:#07101a;box-shadow:0 24px 70px rgba(0,0,0,.35)}
+    .guardian-marketing-art img{display:block;width:100%;height:auto;max-height:760px;object-fit:cover}
+    .guardian-marketing-art figcaption{padding:.8rem 1rem;color:#aeb8c4;font-size:.82rem;letter-spacing:.03em;border-top:1px solid rgba(255,255,255,.08)}
+    @media (max-width:800px){.guardian-marketing-art{border-radius:16px;margin-bottom:1.35rem}.guardian-marketing-art img{max-height:none}.guardian-marketing-art figcaption{font-size:.76rem}}
+  `;
+  document.head.appendChild(artStyles);
+}
+
 const pages=[...document.querySelectorAll('.page')];
 const links=[...document.querySelectorAll('.nav-link')];
 const menu=document.querySelector('.nav');
