@@ -18,9 +18,9 @@ document.querySelectorAll('.nav .nav-link').forEach(link=>{
   if(label) link.textContent=label;
 });
 
-// Use the corrected founder portrait file instead of the damaged legacy asset.
+// Force the homepage to use the founder portrait uploaded on August 29, 2026.
 const founderImage=document.querySelector('.founder-photo img');
-if(founderImage) founderImage.src='assets/founder-web.jpg?v=20260828-6';
+if(founderImage) founderImage.src='assets/Image%2015.jpeg?v=20260829-1';
 
 const pages=[...document.querySelectorAll('.page')];
 const links=[...document.querySelectorAll('.nav-link')];
